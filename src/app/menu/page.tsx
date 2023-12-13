@@ -50,4 +50,5 @@ import React from 'react'
 const page=async()=>{
     return <div className="">hello world</div>
 }
+
 export default page
