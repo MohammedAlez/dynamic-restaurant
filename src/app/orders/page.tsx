@@ -17,7 +17,7 @@ const page = () => {
     const { isPending, data } = useQuery({
         queryKey: ['orders'],
         queryFn: () =>
-            fetch(process.env.NEXT_PUBLIC_URL + '/api/orders').then(
+            fetch(process.env.NEXT_PUBLIC_URL + '/api/orders',{cache:"no-store"}).then(
                 (res) => res.json(),
             ),
     })
