@@ -11,7 +11,7 @@ const getData=async()=>{
     return data.data
 }
 
-const Featured = async() => {
+export const Featured1 = async() => {
     const data:Products = await getData()
     return (
         <div className='w-screen max-w-full overflow-x-scroll '>
@@ -37,5 +37,7 @@ const Featured = async() => {
         </div>
     )
 }
-
+const Featured=()=>{
+    return <div className="">hello</div>
+}
 export default Featured
