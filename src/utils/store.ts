@@ -1,4 +1,4 @@
-import { Actions, cartItem } from "@/types/types"
+import { cartItem } from "@/types/types"
 import { create } from "zustand"
 import {persist} from 'zustand/middleware'
 
@@ -7,9 +7,28 @@ const INITIAL_STATE = {
     totalPrice:0,
     totalItems:0,
 }
+// type temp={
+//     products:[],
+//     totalPrice:number,
+//     totalItems:number,
+// }
+// export type cartItem={
+//     id: string,
+//     title:string,
+//     img?: string,
+//     price: number,
+//     optionTitle?: string,
+//     quantity:number
+// }
 
-
-export const useCartStore = create(persist<Actions  & cartItem>((set,get)=>({
+export type storeType={
+    addToCart:(item:cartItem)=>void;
+    removeFromCart:(item:cartItem)=>void;
+    products:cartItem[],
+    totalPrice:number,
+    totalItems:number,
+}
+export const useCartStore = create(persist<storeType>((set,get)=>({
     products:INITIAL_STATE.products,
     totalPrice:INITIAL_STATE.totalPrice,
     totalItems:INITIAL_STATE.totalItems,
