@@ -42,7 +42,7 @@ export const authOptions:NextAuthOptions={
                     email:token.email!
                 }
             })
-            token.isAdmin=userInDb?.isAdmin
+            token.isAdmin = userInDb ? userInDb.isAdmin : false
             return token
         }
     }
